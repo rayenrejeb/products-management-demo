@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import Product from './Product';
-import { environment } from 'src/environments/environment';
+import { environment } from './../../src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +20,7 @@ export class ProductsService {
       ProductDescription,
       ProductPrice
     };
-    
+
     this.http.post(this.uri + '/add', obj)
         .subscribe(res => {
           console.log('Done');
