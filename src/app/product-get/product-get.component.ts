@@ -14,7 +14,7 @@ export class ProductGetComponent implements OnInit {
   constructor(private ps: ProductsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    // this.products = this.route.snapshot.data['products'];
+    this.loadProducts();
   }
 
   loadProducts() {

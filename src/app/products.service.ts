@@ -21,7 +21,7 @@ export class ProductsService {
       ProductPrice
     };
 
-    this.http.post(this.uri + '/add', obj)
+    this.http.post(this.uri + '/api/products/add', obj)
         .subscribe(res => {
           console.log('Done');
         });
@@ -30,13 +30,13 @@ export class ProductsService {
   getProducts(): Observable<Product[]> {
     return this
            .http
-           .get<Product[]>(this.uri + '/all');
+           .get<Product[]>(this.uri + '/api/products/all');
   }
 
   editProduct(id) {
     return this
             .http
-            .get(this.uri + '/edit/' + id);
+            .get(this.uri + '/api/products/edit/' + id);
   }
 
   updateProduct(ProductName, ProductDescription, ProductPrice, id) {
@@ -47,12 +47,12 @@ export class ProductsService {
     };
     return this
       .http
-      .post(this.uri + '/update/' + id, obj);
+      .post(this.uri + '/api/products/update/' + id, obj);
   }
 
   deleteProduct(id) {
     return this
               .http
-              .delete(this.uri + '/delete/' + id);
+              .delete(this.uri + '/api/products/delete/' + id);
   }
 }
